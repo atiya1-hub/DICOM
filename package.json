@@ -1,4 +1,5 @@
 {
+  "homepage": "https://atiya1-hub.github.io/dicomimage",
   "name": "root",
   "private": true,
   "workspaces": [
@@ -23,6 +24,8 @@
     "dev:project": ".scripts/dev.sh",
     "dev:orthanc": "lerna run dev:orthanc --stream",
     "orthanc:up": "docker-compose -f .docker/Nginx-Orthanc/docker-compose.yml up",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "yarn run dev",
     "test": "yarn run test:unit",
     "test:unit": "jest --collectCoverage",
@@ -42,7 +45,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "core-js": "^3.2.1"
+    "core-js": "^3.2.1",
+    "gh": "^2.8.8"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
