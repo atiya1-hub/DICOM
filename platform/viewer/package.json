@@ -1,4 +1,5 @@
 {
+  "homepage": "https://atiya1-hub.github.io/DICOM/",
   "name": "@ohif/viewer",
   "version": "4.5.15",
   "description": "OHIF Viewer",
@@ -17,6 +18,8 @@
   },
   "proxy": "http://localhost:8042",
   "scripts": {
+    "predeploy": "npm run build:viewer",
+    "deploy": "gh-pages -d dist",
     "build:package": "cross-env NODE_ENV=production node --max_old_space_size=4096 ./../../node_modules/webpack/bin/webpack.js --config .webpack/webpack.commonjs.js --progress",
     "build:viewer": "cross-env NODE_ENV=production node --max_old_space_size=4096 ./../../node_modules/webpack/bin/webpack.js --config .webpack/webpack.pwa.js --progress",
     "build:viewer:lesion-tracker": "cross-env ENTRY_TARGET=index-lesion-tracker.js NODE_ENV=production node --max_old_space_size=4096 ./../../node_modules/webpack/bin/webpack.js --config .webpack/webpack.pwa.js --progress",

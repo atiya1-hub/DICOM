@@ -179,6 +179,9 @@ class ToolbarRow extends Component {
 
     return (
       <>
+        <div>
+          <h1>Study</h1>
+        </div>
         <div className="ToolbarRow">
           <div className="pull-left m-t-1 p-y-1" style={{ padding: '10px' }}>
             <RoundedButtonGroup
